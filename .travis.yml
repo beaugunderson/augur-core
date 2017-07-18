@@ -1,10 +1,10 @@
-language: python
+dist: trusty
+sudo: false
+
+language: generic
 
 notifications:
   email: false
-
-python:
-  - "2.7"
 
 addons:
   apt:
@@ -14,8 +14,8 @@ addons:
       - gfortran
 
 install:
-  - pip install -U pip
-  - pip install pip-tools
+  - pyenv global 2.7.13
+  - pip install -U pip setuptools
   - pip install -r requirements.txt
 
 script:
